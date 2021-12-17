@@ -17,8 +17,7 @@ let svg = d3
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 // Read data
 d3.csv('https://raw.githubusercontent.com/adambabs/visualization/main/test2.csv', function(data) {
-  //'https://raw.githubusercontent.com/oihamza/Interactive-Data-Vis-Fall2020/master/Project%201/stateVoterTurnout.csv'
-  // 'https://raw.githubusercontent.com/adambabs/visualization/main/test1.csv'
+
   // stratify the data: reformatting for d3.js
   var root = d3
     .stratify()
