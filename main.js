@@ -2,9 +2,9 @@ let margin = {
     top: 0,
     right: 0,
     bottom: 0,
-    left: 40
+    left: 0
   },
-  width = 1450 - margin.left - margin.right,
+  width = 1100 - margin.left - margin.right,
   height = 900 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -80,7 +80,7 @@ d3.csv('https://raw.githubusercontent.com/adambabs/visualization/main/test2.csv'
         .style('top', d3.event.pageY - 10 + 'px')
         .style('left', d3.event.pageX + 10 + 'px')
         .html(`<b>Number of clones in the class: </b> ${d.data.value/2} <br>
-             <b> Code of the class: </b>  ${d.data.code}<br>
+             <b> Code of the class: </b> <br> ${d.data.code}<br>
              <b> Lines at which the clone appears:  </b> ${d.data.lines} <br> `);
     })
 
