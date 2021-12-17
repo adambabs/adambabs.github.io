@@ -74,15 +74,31 @@ d3.csv('https://raw.githubusercontent.com/adambabs/visualization/main/test2.csv'
     .on('mouseover', function() {
       tooltip.style('visibility', 'visible');
     })
-    .on('mousemove', function(d) {
-      tooltip
-        .style('top', d3.event.pageY - 10 + 'px')
-        .style('left', d3.event.pageX + 10 + 'px')
-        .text(`Number of clones in the class: ${d.data.value/2}
-         Code of the class: ${d.data.code}   Lines at which the clone appears:  ${d.data.lines}`);
+    // .on('mousemove', function(d) {
+    //   tooltip
+    //     .style('top', d3.event.pageY - 10 + 'px')
+    //     .style('left', d3.event.pageX + 10 + 'px')
+    //     .text(`Number of clones in the class: ${d.data.value/2} \n\r \n\n\n\n .html(<br>)
+    //     Code of the class: ${d.data.code}
+    //     Lines at which the clone appears:  ${d.data.lines}`);
+    // })
+        .on('mousemove', function(d) {
+          tooltip
+      .style('top', d3.event.pageY - 10 + 'px')
+      .style('left', d3.event.pageX + 10 + 'px')
+      // .html(`<tspan x='0' dy='1.2em'><b>Number of clones in the class: </b> ${d.data.value/2} <br> </tspan>
+      //        <tspan x='0' dy='1.2em'> <b> Code of the class: </b>  ${d.data.code}<br></tspan>
+      //       <tspan x='0' dy='1.2em'> <b> Lines at which the clone appears:  </b> ${d.data.lines} <br> </tspan>`);
+      .html(`<b>Number of clones in the class: </b> ${d.data.value/2} <br> 
+             <b> Code of the class: </b>  ${d.data.code}<br>
+             <b> Lines at which the clone appears:  </b> ${d.data.lines} <br> `);
     })
+
     .on('mouseout', function() {
-      tooltip.style('visibility', 'hidden');
+
+      tooltip
+        .style('visibility', 'hidden')
+        .text('');
     });
 
   // and to add the text labels
